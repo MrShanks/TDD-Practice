@@ -17,7 +17,7 @@ import (
 type StubPlayerStore struct {
 	scores   map[string]int
 	winCalls []string
-	league   []Player
+	league   League
 }
 
 // GetPlayerScore retrieves the player's passed score from the scores map of the
@@ -33,7 +33,7 @@ func (s *StubPlayerStore) RecordWin(name string) {
 }
 
 // GetLeague returns the players stored in the league in the StubPlayerStore
-func (s *StubPlayerStore) GetLeague() []Player {
+func (s *StubPlayerStore) GetLeague() League {
 	return s.league
 }
 
